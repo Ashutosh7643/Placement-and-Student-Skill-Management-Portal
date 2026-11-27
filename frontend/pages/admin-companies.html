@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Management | DBUU Admin Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="app-sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="main-column">
+      <header class="topbar" id="app-topbar"></header>
+      <main class="content-area">
+        <div id="pageAlert" class="hidden"></div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2 id="companyFormHeading">Add Recruiting Company</h2>
+            <button type="button" class="btn btn-secondary btn-sm hidden" id="cancelCompanyEditBtn">Cancel Edit</button>
+          </div>
+          <div class="panel-body">
+            <form id="companyForm">
+              <input type="hidden" id="editingCompanyId" />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="companyName">Company Name</label>
+                  <input type="text" id="companyName" required />
+                </div>
+                <div class="form-group">
+                  <label for="companyIndustry">Industry / Domain</label>
+                  <input type="text" id="companyIndustry" placeholder="e.g., IT Services & Consulting" required />
+                </div>
+                <div class="form-group">
+                  <label for="companyLocation">Headquarters / Location</label>
+                  <input type="text" id="companyLocation" placeholder="e.g., Dehradun / Bengaluru" required />
+                </div>
+                <div class="form-group">
+                  <label for="companyWebsite">Website URL (Optional)</label>
+                  <input type="url" id="companyWebsite" placeholder="https://..." />
+                </div>
+                <div class="form-group">
+                  <label for="companyHrName">HR Contact Name (Optional)</label>
+                  <input type="text" id="companyHrName" />
+                </div>
+                <div class="form-group">
+                  <label for="companyHrEmail">HR Contact Email (Optional)</label>
+                  <input type="email" id="companyHrEmail" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="companyDescription">Company Description</label>
+                  <textarea id="companyDescription" placeholder="Brief profile of the company..."></textarea>
+                </div>
+              </div>
+              <div style="margin-top:14px;">
+                <button type="submit" class="btn btn-primary" id="companySubmitBtn">Add Company</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Registered Companies</h2>
+          </div>
+          <div class="panel-body">
+            <form id="companyFilterForm" class="toolbar">
+              <div class="form-group">
+                <label for="companySearchQ">Search Companies</label>
+                <input type="text" id="companySearchQ" placeholder="Search by name, industry, or location" />
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="button" class="btn btn-secondary" id="resetCompanyFilterBtn">Reset</button>
+              </div>
+            </form>
+            <div class="table-wrap" id="companiesTableWrap">Loading companies...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/admin-companies.js"></script>
+</body>
+</html>

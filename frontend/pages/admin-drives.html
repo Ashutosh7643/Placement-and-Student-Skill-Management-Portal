@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Drive Management | DBUU Admin Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="app-sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="main-column">
+      <header class="topbar" id="app-topbar"></header>
+      <main class="content-area">
+        <div id="pageAlert" class="hidden"></div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2 id="driveFormHeading">Create Placement Drive</h2>
+            <button type="button" class="btn btn-secondary btn-sm hidden" id="cancelDriveEditBtn">Cancel Edit</button>
+          </div>
+          <div class="panel-body">
+            <form id="driveForm">
+              <input type="hidden" id="editingDriveId" />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="driveCompany">Company</label>
+                  <select id="driveCompany" required></select>
+                </div>
+                <div class="form-group">
+                  <label for="driveTitle">Drive Title</label>
+                  <input type="text" id="driveTitle" placeholder="e.g., Campus Hiring 2026 - SDE" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveRole">Job Role</label>
+                  <input type="text" id="driveRole" placeholder="e.g., Software Engineer" required />
+                </div>
+                <div class="form-group">
+                  <label for="drivePackage">Package (LPA)</label>
+                  <input type="number" id="drivePackage" min="0" step="0.1" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveLocation">Job Location</label>
+                  <input type="text" id="driveLocation" placeholder="e.g., Dehradun / Noida" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveJobType">Job Type</label>
+                  <select id="driveJobType">
+                    <option value="Full-Time">Full-Time</option>
+                    <option value="Internship + PPO">Internship + PPO</option>
+                    <option value="Internship">Internship</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="driveMinCgpa">Minimum CGPA</label>
+                  <input type="number" id="driveMinCgpa" min="0" max="10" step="0.1" value="6.5" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveMaxBacklogs">Maximum Allowed Backlogs</label>
+                  <input type="number" id="driveMaxBacklogs" min="0" value="0" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveBranches">Eligible Branches (comma-separated, or ALL)</label>
+                  <input type="text" id="driveBranches" value="CSE, IT" placeholder="CSE, IT, ECE or ALL" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveSkills">Required Skills (comma-separated)</label>
+                  <input type="text" id="driveSkills" placeholder="JavaScript, Node.js, MongoDB, SQL" />
+                </div>
+                <div class="form-group">
+                  <label for="driveDeadline">Application Deadline</label>
+                  <input type="date" id="driveDeadline" required />
+                </div>
+                <div class="form-group">
+                  <label for="driveDate">Drive Date (Optional)</label>
+                  <input type="date" id="driveDate" />
+                </div>
+                <div class="form-group">
+                  <label for="driveStatus">Drive Status</label>
+                  <select id="driveStatus">
+                    <option value="Open">Open</option>
+                    <option value="Upcoming">Upcoming</option>
+                    <option value="Closed">Closed</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </div>
+                <div class="form-group full-width">
+                  <label for="driveDescription">Job Description</label>
+                  <textarea id="driveDescription" required placeholder="Role responsibilities and selection process..."></textarea>
+                </div>
+              </div>
+              <div style="margin-top:14px;">
+                <button type="submit" class="btn btn-primary" id="driveSubmitBtn">Create Placement Drive</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>All Placement Drives</h2>
+          </div>
+          <div class="panel-body">
+            <form id="driveFilterForm" class="toolbar">
+              <div class="form-group">
+                <label for="driveSearchQ">Search Drives</label>
+                <input type="text" id="driveSearchQ" placeholder="Search title, role, or company" />
+              </div>
+              <div class="form-group">
+                <label for="driveFilterStatus">Status</label>
+                <select id="driveFilterStatus">
+                  <option value="all">All Statuses</option>
+                  <option value="Open">Open</option>
+                  <option value="Upcoming">Upcoming</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary">Filter</button>
+                <button type="button" class="btn btn-secondary" id="resetDriveFilterBtn">Reset</button>
+              </div>
+            </form>
+            <div class="table-wrap" id="drivesTableWrap">Loading placement drives...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/admin-drives.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="DBUU Placement Portal Emblem">
+  <path d="M32 4L8 14v18c0 15.2 10.2 26.8 24 30 13.8-3.2 24-14.8 24-30V14L32 4z" fill="#142850" stroke="#c5922e" stroke-width="3"/>
+  <path d="M32 10L14 17.5V32c0 11.7 7.6 20.8 18 23.6 10.4-2.8 18-11.9 18-23.6V17.5L32 10z" fill="#1b3668"/>
+  <path d="M22 25h20v4H22zm4 8h12v10H26z" fill="#ffffff"/>
+  <path d="M20 44h24v3H20z" fill="#c5922e"/>
+</svg>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Placement Reports | DBUU Admin Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="app-sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="main-column">
+      <header class="topbar" id="app-topbar"></header>
+      <main class="content-area">
+        <div id="pageAlert" class="hidden"></div>
+
+        <section class="stats-strip" id="reportOverviewStrip">
+          <div class="stat-tile"><div class="stat-label">Total Students</div><div class="stat-value">-</div></div>
+          <div class="stat-tile"><div class="stat-label">Total Companies</div><div class="stat-value">-</div></div>
+          <div class="stat-tile"><div class="stat-label">Total Drives</div><div class="stat-value">-</div></div>
+          <div class="stat-tile"><div class="stat-label">Total Applications</div><div class="stat-value">-</div></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Branch-Wise Academic &amp; Placement Summary</h2>
+            <button type="button" class="btn btn-secondary btn-sm" id="exportBranchCsvBtn">Export Branch CSV</button>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap" id="branchReportWrap">Loading...</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Placement Drive Performance</h2>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap" id="driveReportWrap">Loading...</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Required Skill Demand vs. Student Skill Coverage</h2>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap" id="skillReportWrap">Loading...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/admin-reports.js"></script>
+</body>
+</html>

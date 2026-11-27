@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects &amp; Certifications | DBUU Placement Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="app-sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="main-column">
+      <header class="topbar" id="app-topbar"></header>
+      <main class="content-area">
+        <div id="pageAlert" class="hidden"></div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2 id="projectFormTitle">Add Project</h2>
+            <button type="button" class="btn btn-secondary btn-sm hidden" id="cancelProjectEditBtn">Cancel Edit</button>
+          </div>
+          <div class="panel-body">
+            <form id="projectForm">
+              <input type="hidden" id="editingProjectId" />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="projectTitle">Project Title</label>
+                  <input type="text" id="projectTitle" placeholder="e.g., Online Examination System" required />
+                </div>
+                <div class="form-group">
+                  <label for="projectRole">Your Role</label>
+                  <input type="text" id="projectRole" placeholder="e.g., Full-Stack Developer" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="projectDescription">Description</label>
+                  <textarea id="projectDescription" placeholder="Describe what the project does and your contribution..." required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="projectTechStack">Technologies Used (comma-separated)</label>
+                  <input type="text" id="projectTechStack" placeholder="Node.js, Express.js, MongoDB, HTML5" />
+                </div>
+                <div class="form-group">
+                  <label for="projectGithub">GitHub Repository URL (Optional)</label>
+                  <input type="url" id="projectGithub" placeholder="https://github.com/..." />
+                </div>
+                <div class="form-group">
+                  <label for="projectStartDate">Start Date (Optional)</label>
+                  <input type="date" id="projectStartDate" />
+                </div>
+                <div class="form-group">
+                  <label for="projectEndDate">End Date (Optional)</label>
+                  <input type="date" id="projectEndDate" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="projectUrl">Live / Demo URL (Optional)</label>
+                  <input type="url" id="projectUrl" placeholder="https://..." />
+                </div>
+              </div>
+              <div style="margin-top:14px;">
+                <button type="submit" class="btn btn-primary" id="projectSubmitBtn">Save Project</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>My Projects (<span id="projectsCount">0</span>)</h2>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap" id="projectsTableWrap">Loading projects...</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2 id="certFormTitle">Add Certification</h2>
+            <button type="button" class="btn btn-secondary btn-sm hidden" id="cancelCertEditBtn">Cancel Edit</button>
+          </div>
+          <div class="panel-body">
+            <form id="certForm">
+              <input type="hidden" id="editingCertId" />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="certTitle">Certification Title</label>
+                  <input type="text" id="certTitle" placeholder="e.g., AWS Cloud Practitioner" required />
+                </div>
+                <div class="form-group">
+                  <label for="certOrg">Issuing Organization</label>
+                  <input type="text" id="certOrg" placeholder="e.g., NPTEL, Coursera, MongoDB University" required />
+                </div>
+                <div class="form-group">
+                  <label for="certIssueDate">Issue Date</label>
+                  <input type="date" id="certIssueDate" required />
+                </div>
+                <div class="form-group">
+                  <label for="certExpiryDate">Expiry Date (Optional)</label>
+                  <input type="date" id="certExpiryDate" />
+                </div>
+                <div class="form-group">
+                  <label for="certCredentialId">Credential ID (Optional)</label>
+                  <input type="text" id="certCredentialId" placeholder="e.g., CERT-2026-101" />
+                </div>
+                <div class="form-group">
+                  <label for="certCredentialUrl">Verification URL (Optional)</label>
+                  <input type="url" id="certCredentialUrl" placeholder="https://..." />
+                </div>
+              </div>
+              <div style="margin-top:14px;">
+                <button type="submit" class="btn btn-primary" id="certSubmitBtn">Save Certification</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>My Certifications (<span id="certsCount">0</span>)</h2>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap" id="certsTableWrap">Loading certifications...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/student-portfolio.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | DBUU Placement Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="app-sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="main-column">
+      <header class="topbar" id="app-topbar"></header>
+      <main class="content-area">
+        <div id="pageAlert" class="hidden"></div>
+
+        <section class="stats-strip" id="studentStatsStrip">
+          <div class="stat-tile"><div class="stat-label">CGPA</div><div class="stat-value">-</div></div>
+          <div class="stat-tile"><div class="stat-label">Skills Added</div><div class="stat-value">-</div></div>
+          <div class="stat-tile"><div class="stat-label">Eligible Open Drives</div><div class="stat-value">-</div></div>
+          <div class="stat-tile"><div class="stat-label">My Applications</div><div class="stat-value">-</div></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Academic Snapshot</h2>
+            <a href="/pages/student-profile.html" class="btn btn-secondary btn-sm">Update Profile</a>
+          </div>
+          <div class="panel-body" id="academicSnapshot">Loading academic profile...</div>
+        </section>
+
+        <div class="two-col-grid">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Open Placement Drives</h2>
+              <a href="/pages/student-drives.html" class="btn btn-secondary btn-sm">Browse All Drives</a>
+            </div>
+            <div class="panel-body">
+              <div class="table-wrap" id="dashboardDrivesWrap">Loading drives...</div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Recent Applications</h2>
+              <a href="/pages/student-applications.html" class="btn btn-secondary btn-sm">View All</a>
+            </div>
+            <div class="panel-body">
+              <div class="table-wrap" id="dashboardAppsWrap">Loading applications...</div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/student-dashboard.js"></script>
+</body>
+</html>

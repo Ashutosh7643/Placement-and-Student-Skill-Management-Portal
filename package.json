@@ -1,0 +1,13 @@
+{
+  "name": "placement-skill-portal-root",
+  "version": "1.0.0",
+  "description": "Placement and Student Skill Management Portal - Dev Bhoomi Uttarakhand University",
+  "private": true,
+  "scripts": {
+    "install:backend": "npm --prefix backend install",
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev",
+    "seed": "node database/seed.js",
+    "test": "npm --prefix backend test"
+  }
+}

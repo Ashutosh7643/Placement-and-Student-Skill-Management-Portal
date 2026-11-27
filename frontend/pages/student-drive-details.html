@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drive Details &amp; Skill Match | DBUU Placement Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="app-sidebar"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="main-column">
+      <header class="topbar" id="app-topbar"></header>
+      <main class="content-area">
+        <div style="margin-bottom:14px;">
+          <a href="/pages/student-drives.html" class="btn btn-secondary btn-sm">&larr; Back to Placement Drives</a>
+        </div>
+
+        <div id="pageAlert" class="hidden"></div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <h2 id="driveHeading">Loading Drive Details...</h2>
+              <div class="muted-text" id="driveSubheading"></div>
+            </div>
+            <div id="driveHeaderBadges"></div>
+          </div>
+          <div class="panel-body" id="driveOverviewBody">Loading...</div>
+        </section>
+
+        <div class="two-col-grid">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Eligibility Check Result</h2>
+              <span id="eligibilityStatusBadge"></span>
+            </div>
+            <div class="panel-body" id="eligibilityBody">Evaluating eligibility...</div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Rule-Based Skill Match &amp; Gaps</h2>
+              <span id="skillMatchPercentBadge"></span>
+            </div>
+            <div class="panel-body" id="skillMatchBody">Calculating skill match...</div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Application Action</h2>
+          </div>
+          <div class="panel-body" id="applyActionBody">Checking status...</div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/student-drive-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement &amp; Student Skill Management Portal | DBUU Dehradun</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="public-header">
+    <div class="public-header-inner">
+      <div class="brand-lockup">
+        <img src="/images/dbuu-crest.svg" alt="DBUU Emblem" />
+        <div>
+          <div class="brand-title">Dev Bhoomi Uttarakhand University, Dehradun</div>
+          <div class="brand-subtitle">Training &amp; Placement Cell — Placement &amp; Skill Portal</div>
+        </div>
+      </div>
+      <nav class="public-nav">
+        <a href="/pages/login.html">Student Login</a>
+        <a href="/pages/register.html">Student Registration</a>
+        <a href="/pages/admin-login.html" class="nav-cta">Admin Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="landing-main">
+    <section class="hero-panel">
+      <div>
+        <div class="hero-kicker">B.Tech CSE Minor Project</div>
+        <h1>Placement and Student Skill Management Portal</h1>
+        <p class="muted-text">
+          A centralized academic placement portal for students and the Training &amp; Placement Cell
+          to manage student academic records, technical and soft skills, projects, certifications,
+          campus placement drives, rule-based eligibility checks, and transparent skill gap analysis.
+        </p>
+        <div class="hero-actions" id="landingActions">
+          <a href="/pages/login.html" class="btn btn-primary">Student Sign In</a>
+          <a href="/pages/register.html" class="btn btn-secondary">Register as Student</a>
+          <a href="/pages/admin-login.html" class="btn btn-secondary">T&amp;P Admin Sign In</a>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h2>Core Capabilities</h2>
+        <ul class="info-list">
+          <li>Student profile with CGPA, branch, semester, and backlog tracking</li>
+          <li>Technical skills, soft skills, projects, and certifications management</li>
+          <li>Automated backend eligibility verification per placement drive</li>
+          <li>Rule-based skill match percentage and clear skill gap identification</li>
+          <li>Real-time application tracking from Applied to Selected</li>
+          <li>Admin management for students, companies, drives, and reports</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="portal-modules">
+      <div class="module-panel">
+        <h3>For Students</h3>
+        <p class="muted-text">
+          Maintain your academic portfolio, verify eligibility before applying, inspect missing skills
+          against company requirements, and track application status updates.
+        </p>
+      </div>
+      <div class="module-panel">
+        <h3>For Placement Cell (Admin)</h3>
+        <p class="muted-text">
+          Register recruiting companies, publish placement drives with CGPA, backlog, and branch
+          rules, shortlist applicants, and review branch-wise placement reports.
+        </p>
+      </div>
+      <div class="module-panel">
+        <h3>Transparent Rule Engine</h3>
+        <p class="muted-text">
+          Eligibility and skill matching run on the Express backend using deterministic rules and
+          MongoDB persistence with zero mock data.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script>
+    (async function checkSessionForLanding() {
+      try {
+        const res = await fetch('/api/auth/me', { credentials: 'same-origin' });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data && data.user) {
+          const actions = document.getElementById('landingActions');
+          const dashUrl =
+            data.user.role === 'admin'
+              ? '/pages/admin-dashboard.html'
+              : '/pages/student-dashboard.html';
+          actions.innerHTML = `<a href="${dashUrl}" class="btn btn-primary">Go to My Dashboard (${PortalCommon.escapeHtml(data.user.name)})</a>`;
+        }
+      } catch (_) {
+        // Ignore if not signed in
+      }
+    })();
+  </script>
+</body>
+</html>
